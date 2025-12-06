@@ -1,0 +1,23 @@
+
+
+.mystyle{
+    color:red;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+  #draggable { width: 150px; height: 150px; padding: 0.5em; }
+
+
+    #progressbar {
+    margin-top: 20px;
+  }
+ 
+  .progress-label {
+    font-weight: bold;
+    text-shadow: 1px 1px 0 #fff;
+  }
+ 
+  .ui-dialog-titlebar-close {
+    display: none;
+  }

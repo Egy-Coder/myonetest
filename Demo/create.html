@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Create New Post</title>
+    <link rel="icon" href="imgs/a.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="libs/fontawesome-free-7/css/all.css" />
+    <link rel="stylesheet" href="libs/bootstrap-materia.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+</head>
+
+<body>
+
+
+    <div class="container-fluid">
+        <center>
+            <h1>Create New Post</h1>
+
+            <br> <br>
+
+            <div class="row">
+                <div class="col-xl-6">
+                    <input type="text" placeholder="post title" id="Title" class="form-control">
+                </div>
+                <div class="col-xl-6">
+                    <input type="text" placeholder="post body" id="Body" class="form-control">
+                </div>
+            </div>
+
+            <br> <br>
+
+            <input type="button" value="Save" id="savePost" class="btn btn-primary">
+
+        </center>
+    </div>
+
+
+    <script src="/libs/jquery-3.7.1.js"></script>
+    <script src="/libs/fontawesome-free-7/js/all.js"></script>
+    <script src="/libs/bootstrap-5/js/bootstrap.bundle.js"></script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/JqueryTutorial.js"></script>
+    <script>
+
+        $(function () {
+
+            $('#savePost').click(function () {
+
+                var mytitle = $('#Title').val();
+                var mybody = $('#Body').val();
+
+                var postObject = { title: mytitle, body: mybody };
+
+                $.ajax({
+
+                    type: "Post",
+                    url: "https://jsonplaceholder.typicode.com/posts",
+                    data: JSON.stringify(postObject),
+                    success: function (res) {
+
+                        alert("post created  with id : " + res.id);
+                    }
+
+                });
+            });
+
+
+
+
+
+
+
+
+
+
+
+
+
+        });
+
+
+    </script>
+</body>
+
+</html>
